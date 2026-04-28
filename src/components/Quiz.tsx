@@ -172,7 +172,15 @@ export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
     if (isSubmitted || eliminated.includes(key)) return;
     
     if (isMulti) {
-      setSelected(prev => prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]);
+      setSelected(prev => {
+        if (prev.includes(key)) {
+          return prev.filter(k => k !== key);
+        }
+        if (prev.length >= q.answer.length) {
+          return prev;
+        }
+        return [...prev, key];
+      });
     } else {
       setSelected([key]);
     }
