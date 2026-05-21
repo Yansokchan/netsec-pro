@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { questions } from '../data';
+import { questions as netsecQuestions } from '../data';
+import { questions as secopsQuestions } from '../secopsData';
 import { Card } from './ui/Card';
 import { Search, BookOpen, CheckCircle2 } from 'lucide-react';
 
-export default function StudyGuide() {
+export default function StudyGuide({ course }: { course: 'netsec' | 'secops' }) {
   const [searchQuery, setSearchQuery] = useState('');
 
+  const questions = course === 'netsec' ? netsecQuestions : secopsQuestions;
   const filteredQuestions = questions.filter(
     (q) =>
       q.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -17,7 +19,7 @@ export default function StudyGuide() {
       <div className="mb-8 text-center space-y-4">
         <h2 className="text-3xl font-extrabold text-slate-900 flex items-center justify-center gap-3">
           <BookOpen className="w-8 h-8 text-indigo-600" />
-          Study Guide
+          {course === 'netsec' ? 'NetSec-Pro' : 'SecOps-Pro'} Study Guide
         </h2>
         <p className="text-slate-500 text-lg">
           Review all {questions.length} questions, answers, and detailed explanations.

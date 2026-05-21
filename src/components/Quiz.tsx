@@ -1,26 +1,27 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'motion/react';
-import { questions } from '../data';
+import { questions as netsecQuestions } from '../data';
+import { questions as secopsQuestions } from '../secopsData';
 import { Question, QuizHistoryEntry } from '../types';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
-import { cn } from '../utils';
+import { cn, shuffleArray } from '../utils';
 import { AlertCircle, CheckCircle2, Lightbulb, XCircle, RotateCcw, ChevronRight, Clock } from 'lucide-react';
 
-export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
+export default function Quiz({ course, duration, onComplete }: { course: 'netsec' | 'secops'; duration: number; onComplete: () => void }) {
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [eliminated, setEliminated] = useState<string[]>([]);
-  const [timeRemaining, setTimeRemaining] = useState<number>(durationMinutes * 60);
+  const [timeRemaining, setTimeRemaining] = useState<number>(duration * 60);
   const [isSaved, setIsSaved] = useState(false);
 
   const latestStateRef = useRef({
     score: 0,
     currentIndex: 0,
-    timeRemaining: durationMinutes * 60,
+    timeRemaining: duration * 60,
     totalQuestions: 0,
     selectedCount: 0,
     isSubmitted: false,
@@ -29,9 +30,9 @@ export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
   const isMountedRef = useRef(true);
   
   useEffect(() => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    const shuffled = shuffleArray(course === 'netsec' ? netsecQuestions : secopsQuestions);
     setShuffledQuestions(shuffled);
-  }, []);
+  }, [course]);
 
   useEffect(() => {
     return () => {
@@ -78,7 +79,7 @@ export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
       answeredQuestions > 0 ||
       latest.selectedCount > 0 ||
       latest.score > 0 ||
-      latest.timeRemaining < durationMinutes * 60;
+      latest.timeRemaining < duration * 60;
     if (!completed && !hasProgress) return;
 
     const entry: QuizHistoryEntry = {
@@ -86,9 +87,10 @@ export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
       date: new Date().toISOString(),
       score: latest.score,
       total: latest.totalQuestions,
-      timeTakenSeconds: (durationMinutes * 60) - latest.timeRemaining,
+      timeTakenSeconds: (duration * 60) - latest.timeRemaining,
       answeredQuestions,
       completed,
+      course,
     };
 
     appendHistoryEntry(entry);
@@ -96,7 +98,7 @@ export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
     if (isMountedRef.current) {
       setIsSaved(true);
     }
-  }, [appendHistoryEntry, durationMinutes]);
+  }, [appendHistoryEntry, duration, course]);
 
   useEffect(() => {
     let timer: number | undefined;
@@ -141,23 +143,13 @@ export default function Quiz({ durationMinutes }: { durationMinutes: number }) {
             <p className="text-xl text-slate-500 mb-6 font-medium">out of {shuffledQuestions.length} correct</p>
             <div className="flex items-center justify-center gap-2 text-slate-600 mb-10 font-medium">
               <Clock className="w-5 h-5 text-indigo-500" />
-              <span>Time taken: {formatTime((durationMinutes * 60) - timeRemaining)}</span>
+              <span>Time taken: {formatTime((duration * 60) - timeRemaining)}</span>
             </div>
             <Button 
-              onClick={() => { 
-                const shuffled = [...questions].sort(() => Math.random() - 0.5);
-                setShuffledQuestions(shuffled);
-                setCurrentIndex(0); 
-                setSelected([]);
-                setIsSubmitted(false);
-                setScore(0);
-                setEliminated([]);
-                setTimeRemaining(durationMinutes * 60);
-                setIsSaved(false);
-              }} 
+              onClick={onComplete}
               className="text-lg px-8 py-3 w-full max-w-xs mx-auto"
             >
-                <RotateCcw className="w-5 h-5 mr-2" /> Restart Quiz
+                Back to Home
             </Button>
         </div>
       </div>

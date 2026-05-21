@@ -78,6 +78,15 @@ export default function History() {
             <Card key={entry.id} className="p-6 hover:shadow-md transition-shadow">
               <div className="flex justify-between items-start mb-6">
                 <div>
+                  <span
+                    className={`inline-block text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-2 ${
+                      entry.course === 'secops'
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-blue-100 text-blue-700'
+                    }`}
+                  >
+                    {(entry.course ?? 'netsec') === 'secops' ? 'SecOps-Pro' : 'NetSec-Pro'}
+                  </span>
                   <div className="text-sm font-semibold text-slate-500 mb-1">
                     {formatDate(entry.date)}
                   </div>
