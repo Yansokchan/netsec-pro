@@ -39,7 +39,13 @@ export default function App() {
   };
 
   const courseLabel =
-    course === 'netsec' ? 'NetSec-Pro' : course === 'secops' ? 'SecOps-Pro' : null;
+    course === 'netsec'
+      ? 'NetSec-Pro'
+      : course === 'secops'
+      ? 'SecOps-Pro'
+      : course === 'netsec2'
+      ? 'NetSec-Pro-II'
+      : null;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">

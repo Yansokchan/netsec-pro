@@ -1,0 +1,1018 @@
+Topic 1	Question #1
+Which two tools can be used to configure Cloud NGFWs for AWS? (Choose two.)
+A. Prisma Cloud management console
+B. Cortex XSIAM
+C. Cloud service provider (CSP) management console
+D. Panorama
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: CD
+Exam NetSec-Pro (2026/5/19)
+
+-- 1 of 60 --
+
+Topic 1	Question #2
+In which two applications can Prisma Access threat logs for mobile user traffic be reviewed? (Choose two.)
+A. Prisma Cloud dashboard
+B. Strata Cloud Manager (SCM)
+C. Strata Logging Service
+D. Service connection firewall
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: BC
+
+-- 2 of 60 --
+
+Topic 1	Question #3
+A network security engineer needs to implement segmentation but is under strict compliance requirements to place security
+enforcement as close as possible to the private applications hosted in Azure.
+Which deployment style is valid and meets the requirements in this scenario?
+A. On a PA-Series NGFW, configure several Layer 3 zones with Layer 3 interfaces assigned to logically segment the network.
+B. On a VM-Series NGFW, configure several Layer 3 zones with Layer 3 interfaces assigned to logically segment the network.
+C. On a VM-Series NGFW, configure several Layer 2 zones with Layer 2 interfaces assigned to logically segment the network.
+D. On a PA-Series NGFW, configure several Layer 2 zones with Layer 2 interfaces assigned to logically segment the network.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 3 of 60 --
+
+Topic 1	Question #4
+When adding a Zero Touch Provisioning (ZTP) firewall to Panorama, when can the firewall be powered on?
+A. During license activation
+B. After activating registration and completing license deployment profile
+C. After all required installation and setup procedures are completed
+D. During installation
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 4 of 60 --
+
+Topic 1	Question #5
+Which profile can help prevent the transmission of sensitive information to internet applications?
+A. Antivirus
+B. Data Filtering
+C. Anti-spyware
+D. URL Filtering
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 5 of 60 --
+
+Topic 1	Question #6
+How do template stacks help manage firewall configurations in Panorama?
+A. By grouping templates across multiple firewalls
+B. By creating template variables for permanent configurations in firewalls
+C. By creating a diagram of the network for a view of all firewalls
+D. By handling firmware updates across multiple firewalls
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 6 of 60 --
+
+Topic 1	Question #7
+Which subscription sends non-file format-based traffic that matches Data Filtering profile criteria to a cloud service to render a
+verdict?
+A. SaaS Security Inline
+B. Enterprise DLP
+C. Advanced URL Filtering
+D. Advanced WildFire
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 7 of 60 --
+
+Topic 1	Question #8
+A cloud security architect is designing a certificate management strategy for Strata Cloud Manager (SCM) across hybrid
+environments.
+Which practice ensures optimal security with low management overhead?
+A. Implement separate certificate authorities with independent validation rules for each cloud environment.
+B. Configure manual certificate deployment with quarterly reviews and environment-specific security protocols.
+C. Use cloud provider default certificates with scheduled synchronization and localized renewal processes.
+D. Deploy centralized certificate automation with standardized protocols and continuous monitoring.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 8 of 60 --
+
+Topic 1	Question #9
+Which two prerequisites must be evaluated when decrypting internet-bound traffic? (Choose two.)
+A. Incomplete certificate chains
+B. RADIUS profile
+C. Certificate pinning
+D. SAML certificate
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: AC
+
+-- 9 of 60 --
+
+Topic 1	Question #10
+In which order does an NGFW process URL categories for Security policy?
+A. 1. External dynamic lists
+2. Custom URL categories
+3. Predefined categories
+B. 1. Custom URL categories
+2. External dynamic lists
+3. Predefined categories Most Voted
+C. 1. Custom URL categories
+2. Predefined categories
+3. External dynamic lists
+D. 1. Predefined categories
+2. External dynamic lists
+3. Custom URL categories
+Comments
+0aaeb28 3 weeks, 1 day ago
+Selected Answer: B
+The correct answer is:
+**B.
+Custom URL categories
+External dynamic lists
+Predefined categories**
+Why this order matters:
+Custom URL categories are evaluated first because they are the most specific and explicitly defined by the administrator. They’re meant to override
+everything else.
+External Dynamic Lists (EDLs) come next, since they are still user-defined (though externally sourced) and should take precedence over vendor
+defaults.
+Predefined categories are evaluated last, as they are the baseline provided by the firewall vendor.
+This hierarchy ensures that your explicit policies take priority over external feeds, and both override default categorization, which is exactly how you
+maintain control in a Palo Alto NGFW environment.
+upvoted 2 times
+Correct Answer: A
+Community vote distribution
+B (100%)
+
+-- 10 of 60 --
+
+Topic 1	Question #11
+What must be configured to successfully onboard a Prisma Access remote network using Strata Cloud Manager (SCM)?
+A. Cloud Identity Engine
+B. GlobalProtect agent
+C. IPSec termination node
+D. Autonomous Digital Experience Manager (ADEM)
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 11 of 60 --
+
+Topic 1	Question #12
+Which zone is available for use in Prisma Access?
+A. Clientless VPN Most Voted
+B. DMZ
+C. Interzone
+D. Intrazone
+Comments
+edmuffins Highly Voted 2 months, 1 week ago
+Selected Answer: A
+Prisma Access operates in 3 zones - Trust, Untrust and Clientless VPN:
+https://docs.paloaltonetworks.com/prisma-access/administration/prisma-access-setup/prisma-access-zones
+upvoted 6 times
+Correct Answer: D
+Community vote distribution
+A (100%)
+
+-- 12 of 60 --
+
+Topic 1	Question #13
+Which firewall attribute simplifies rule creation and automatically adapts to changes in server roles or security posture based on
+log events?
+A. Dynamic Address Groups
+B. Dynamic User Groups
+C. Predefined IP addresses
+D. Address objects
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 13 of 60 --
+
+Topic 1	Question #14
+What is a necessary step for creation of a custom Prisma Access report on Strata Cloud Manager (SCM)?
+A. Open a support ticket.
+B. Configure a dashboard.
+C. Generate a PDF summary report.
+D. Set up Cloud Identity Engine.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 14 of 60 --
+
+Topic 1	Question #15
+Which feature of SaaS Security will allow a firewall administrator to identify unknown SaaS
+applications in an environment?
+A. App-ID Cloud Engine
+B. SaaS Data Security
+C. Cloud Identity Engine
+D. App-ID
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 15 of 60 --
+
+Topic 1	Question #16
+When a rule has been set up to block uploading all Portable Executable (PE) files, which type of log will display blocked files that
+attempt to traverse the network?
+A. Traffic
+B. Data filtering
+C. URL filtering
+D. Threat
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 16 of 60 --
+
+Topic 1	Question #17
+A network security engineer wants to forward Strata Logging Service data to tools used by the security operations center (SOC) for
+further investigation.
+In which best practice step of Palo Alto Networks Zero Trust does this fit?
+A. Implementation
+B. Standards and Designs
+C. Map and Verify Transactions
+D. Report and Maintenance
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 17 of 60 --
+
+Topic 1	Question #18
+Using Prisma Access, which solution provides the most security coverage of network protocols for the mobile workforce?
+A. Enterprise browser
+B. Explicit proxy
+C. Client-based VPN
+D. Clientless VPN
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 18 of 60 --
+
+Topic 1	Question #19
+Which Security policy on a data center NGFW will block intrazone traffic in Zone Colorado for the Dynamic User Group "Testers"
+and custom application "Payment System"?
+A. Source & Destination Zone = Colorado
+Users = Testers -
+Application = Payment System -
+Action = Deny
+B. Source & Destination Zone = Colorado
+Users = Testers -
+Application = Any -
+Action = Deny
+C. Source Zone = Colorado -
+Destination Zone = LA -
+Users = Testers -
+Application = Payment System -
+Action = Deny
+D. Source Zone = Colorado -
+Destination Zone = LA -
+Users = Testers -
+Application = Any -
+Action = Deny
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 19 of 60 --
+
+Topic 1	Question #20
+A primary firewall in a high availability (HA) pair is experiencing a current failover issue with ICMP pings to a secondary device.
+Which metric should be reviewed for proper ICMP pings between the firewall pair?
+A. Non-functional state
+B. Bidirectional Forwarding Detection (BFD)
+C. Link monitoring
+D. Heartbeat polling
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 20 of 60 --
+
+Topic 1	Question #21
+After a firewall is associated with Strata Cloud Manager (SCM), which two additional actions are required to enable management
+of the firewall from SCM? (Choose two.)
+A. Install a device certificate. Most Voted
+B. Configure a Security policy allowing "stratacloudmanager.paloaltonetworks.com" for all users.
+C. Configure NTP and DNS servers for the firewall. Most Voted
+D. Deploy a service connection for each branch site and connect with SCM.
+Comments
+0aaeb28 3 weeks ago
+Selected Answer: AC
+Why these are required:
+A. Device certificate → The firewall needs a valid certificate to authenticate securely with Strata Cloud Manager (SCM). Without it, management
+communication won’t be established properly.
+C. NTP and DNS → These are foundational:
+DNS is required to resolve SCM endpoints.
+NTP ensures correct time, which is critical for certificate validation and secure communication.
+Why the others are not required:
+B → You don’t need a specific Security policy allowing that FQDN “for all users”; management traffic is handled by the system, not via a user-based
+Security policy like that.
+D → Service connections are related to Prisma Access or branch connectivity, not required just to enable SCM management of a firewall.
+upvoted 2 times
+0b4d744 2 months ago
+Selected Answer: AC
+Both of these are necessary. B is not necessary because of the default rules out of the box and D is not because it applies to specific architectures
+(like Prisma Access), not basic SCM firewall management.
+upvoted 3 times
+edmuffins 2 months, 1 week ago
+Selected Answer: AC
+Configure NTP and DNS servers for the firewall: You must configure the firewall's DNS and NTP servers because this is required for the firewall to
+successfully connect to Strata Cloud Manager and to install software and content updates
+upvoted 4 times
+Correct Answer: AC
+Community vote distribution
+AC (100%)
+
+-- 21 of 60 --
+
+Topic 1	Question #22
+In which order is Prisma SD-WAN dynamic path selection performed?
+A. 1. Determine potential paths based on policy.
+2. Determine link quality.
+3. Measure application performance.
+4. Measure link capacity.
+B. 1. Measure link capacity.
+2. Measure application performance.
+3. Determine link quality.
+4. Determine potential paths based on policy.
+C. 1. Determine potential paths based on policy.
+2. Measure application performance.
+3. Determine link quality.
+4. Measure link capacity.
+D. 1. Determine link quality.
+2. Measure link capacity.
+3. Measure application performance.
+4. Determine potential paths based on policy.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 22 of 60 --
+
+Topic 1	Question #23
+Which two frameworks are compared in the Compliance Summary dashboard of Strata Cloud Manager (SCM)? (Choose two.)
+A. GDPR
+B. NIST
+C. PCI-DSS
+D. CIS
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: BD
+
+-- 23 of 60 --
+
+Topic 1	Question #24
+Which NGFW tool should be reviewed when a management team wants feedback on how to reduce the attack surface of their
+network security deployment and how it maps to the Center for Internet Security (CIS) Critical Security Controls?
+A. Executive summary report
+B. Policy Optimizer
+C. Best Practice Assessment (BPA)
+D. Command Center
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 24 of 60 --
+
+Topic 1	Question #25
+A network engineer pushes specific Panorama reports of new AI URL category types to branch NGFWs.
+Which two report types achieve this goal? (Choose two.)
+A. AI
+B. PDF summary Most Voted
+C. Custom Most Voted
+D. SNMP
+Comments
+PA_fan 5 days, 23 hours ago
+Selected Answer: BC
+Here are the different types :
+Custom ,Summary, Predefined, NonUser/Group Activity
+upvoted 1 times
+0aaeb28 3 weeks ago
+Selected Answer: BC
+The correct answers are:
+B. PDF summary
+C. Custom
+Why:
+To push specific Panorama-generated reports (like AI URL category usage) to branch NGFWs, you need report formats that are:
+Configurable
+Exportable / distributable
+Supported for scheduled or forwarded delivery
+B. PDF summary
+Provides a portable, shareable report format
+Commonly used for scheduled distribution from Panorama to firewalls or external systems
+Suitable for delivering summarized AI URL category insights
+C. Custom
+Allows the engineer to define exactly what data is included, such as AI-based URL categories
+Can be tailored to branch-specific reporting needs
+Supports flexible scheduling and distribution
+Why not the others:
+A. AI → Not a report type; it refers to a category or data classification, not a reporting format.
+D. SNMP → Used for monitoring and alerts, not for delivering structured reports like URL category summaries.
+upvoted 1 times
+edmuffins 2 months, 1 week ago
+Selected Answer: BC
+AI is not a report type.
+upvoted 1 times
+Correct Answer: AC
+Community vote distribution
+BC (100%)
+
+-- 25 of 60 --
+
+Topic 1	Question #26
+Which two types of logs must be forwarded to Strata Logging Service for IoT Security to function? (Choose two.)
+A. WildFire
+B. Enhanced application Most Voted
+C. Threat
+D. Traffic Most Voted
+Comments
+0aaeb28 3 weeks ago
+Selected Answer: CD
+You should read the whole webpage, it states:
+Device Security uses Enhanced Application logs (EALs), traffic logs (which include DHCP traffic), threat logs, and wildfire logs. Make sure that your
+policy rules have logging enabled and are forwarding EALs and traffic logs to Strata Logging Service. Although the last two log types are not required
+for Device Security to function, we recommend getting licenses for threat prevention and Wildfire and forwarding their logs as well because they
+help improve risk assessment and malware detection.
+upvoted 1 times
+d624435 1 month, 1 week ago
+Selected Answer: BD
+The IoT- Device Security needs Enhanced Application logging enabled and at minimum Traffic logs:
+https://docs.paloaltonetworks.com/iot/getting-started/prepare-your-firewall-for-iot-security
+Threat, WF and URL logs is enhancing the device secuirty for vulnerability evaluation.
+upvoted 2 times
+Correct Answer: CD
+Community vote distribution
+BD (67%) 	CD (33%)
+
+-- 26 of 60 --
+
+Topic 1	Question #27
+Which two modes should be enabled on the GlobalProtect agent to allow a subset of users to connect directly to SaaS and
+internal applications while allowing the remaining users to connect through third-party VPN? (Choose two.)
+A. Remote desktop protocol (RDP)
+B. Proxy
+C. Tunnel
+D. Clientless
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: BC
+
+-- 27 of 60 --
+
+Topic 1	Question #28
+In which security profile is credential phishing prevention implemented?
+A. URL Filtering
+B. Vulnerability Protection
+C. Antivirus
+D. Anti-spyware
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 28 of 60 --
+
+Topic 1	Question #29
+How does PAN-OS identify App-IDs to perform application-layer inspection?
+A. From predefined static rules based on IP addresses and ports configured by the administrator
+B. From inspection of SSL certificates, cloud-based metadata, and manual application classification by the administrator
+C. From periodic updates that categorize web traffic based on domain names, focusing on web-browsing activities
+D. From multiple classification mechanisms - application signatures, application protocol decoding, and heuristics
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 29 of 60 --
+
+Topic 1	Question #30
+Which GlobalProtect configuration is recommended for granular security enforcement of remote user device posture?
+A. Applying log at session end to all GlobalProtect Security policies
+B. Configuring host information profile (HIP) checks for all mobile users
+C. Configuring a rule that blocks the ability of users to disable GlobalProtect while accessing internal applications
+D. Implementing multi-factor authentication (MFA) for all users attempting to access internal applications
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 30 of 60 --
+
+Topic 1	Question #31
+Which two features can a network administrator use to troubleshoot the issue of a Prisma Access mobile user who is unable to
+access SaaS applications? (Choose two.)
+A. Autonomous Digital Experience Manager (ADEM) console
+B. Capacity Analyzer
+C. Global Protect logs
+D. SaaS Application Risk Portal
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: AC
+
+-- 31 of 60 --
+
+Topic 1	Question #32
+Which file type does Advanced WildFire support for inline analysis to detect advanced malware?
+A. PE Most Voted
+B. APK
+C. PDF
+D. JAR
+Comments
+0aaeb28 3 weeks ago
+Selected Answer: A
+The correct answer is:
+A. PE
+Why:
+Advanced WildFire inline analysis is designed to inspect and block Windows Portable Executable (PE) files in real time.
+PE files (.exe, .dll) are the most common format used for Windows malware delivery, so they are a primary focus for inline deep learning and
+static/dynamic analysis in WildFire.
+This inline capability allows immediate detection and prevention before the file is executed.
+Why not the others:
+B. APK → Android files are analyzed by WildFire, but not typically in inline mode.
+C. PDF → Supported for analysis, but not the primary inline advanced malware enforcement type.
+D. JAR → Java archives are analyzed, but again not the primary inline-supported format for Advanced WildFire detection.
+upvoted 1 times
+DaniSerb 2 months, 1 week ago
+Selected Answer: A
+https://docs.paloaltonetworks.com/advanced-wildfire/administration/configure-advanced-wildfire-analysis/enable-advanced-wildfire-inline-cloud-
+analysis
+PE is available for inline analysis
+upvoted 3 times
+DaniSerb 2 months, 1 week ago
+"Only PE (portable executable) are supported at this time."
+upvoted 2 times
+edmuffins 2 months, 1 week ago
+Selected Answer: A
+https://docs.paloaltonetworks.com/advanced-wildfire
+upvoted 2 times
+Correct Answer: A
+Community vote distribution
+A (100%)
+
+-- 32 of 60 --
+
+Topic 1	Question #33
+An administrator wants to implement additional Cloud-Delivered Security Services (CDSS) on a data center NGFW that already has
+one enabled.
+What benefit does the NGFWs single-pass parallel processing (SP3) architecture provide?
+A. It allows for traffic inspection at the application level.
+B. There will be only a minor reduction in performance.
+C. There will be no additional performance degradation.
+D. It allows additional security inspection devices to be added inline.
+Comments
+PA_fan 1 week ago
+Selected Answer: B
+The question mentions "already has one", and when you add multiple CDSS you face only a minor performance degradation
+upvoted 1 times
+DaniSerb 2 months, 1 week ago
+Selected Answer: C
+https://www.paloaltonetworks.com/resources/whitepapers/single-pass-parallel-processing-architecture#
+Our Single-Pass
+Architecture provides:
+• No additional performance
+overhead when enabling additional
+features.
+• Easy management of all threat
+prevention aspects of security
+policy.
+• Simplified management through
+fewer consoles and functional
+gaps for more effective security
+coverage.
+• Significantly lower total cost of
+ownership.
+upvoted 2 times
+Correct Answer: C
+Community vote distribution
+C (67%) 	B (33%)
+
+-- 33 of 60 --
+
+Topic 1	Question #34
+What is the recommended upgrade path from PAN-OS 9.1 to PAN-OS 11.2?
+A. 9.1 --> 11.2
+B. 9.1 --> 11.0 --> 11.2
+C. 9.1 --> 10.0 --> 11.0 --> 11.2
+D. 9.1 --> 10.0 --> 11.0 --> 11.1 --> 11.2
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 34 of 60 --
+
+Topic 1	Question #35
+By default, how often are signatures updated for firewalls with Advanced WildFire?
+A. In real time Most Voted
+B. Within 5-10 minutes
+C. Within 24-48 hours
+D. Once a week
+Comments
+DaniSerb 2 months, 1 week ago
+Selected Answer: A
+https://docs.paloaltonetworks.com/advanced-wildfire/administration/advanced-wildfire-overview/advanced-wildfire-concepts/advanced-wildfire-
+signatures
+Firewalls with an active Advanced WildFire license can retrieve the latest Advanced WildFire signatures in real-time, as soon as they become available
+If you do not have an Advanced WildFire subscription, signatures are made available within 24-48 hours as part of the antivirus update for firewalls
+with an active Threat Prevention license.
+upvoted 3 times
+edmuffins 2 months, 1 week ago
+Selected Answer: A
+Real-Time Delivery: With the Advanced WildFire license and PAN-OS 10.0 or later, the firewall can be configured for a "Real-time" recurrence. This
+allows the device to pull specific signatures as soon as they are generated by the WildFire cloud, rather than waiting for a scheduled batch download
+upvoted 2 times
+Correct Answer: B
+Community vote distribution
+A (100%)
+
+-- 35 of 60 --
+
+Topic 1	Question #36
+Which functionality does an NGFW use to determine whether new session setups are legitimate or illegitimate?
+A. SYN bit
+B. SYN flood protection
+C. SYN cookies
+D. Random Early Detection (RED)
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 36 of 60 --
+
+Topic 1	Question #37
+Which set of attributes is used by IoT Security to identify and classify appliances on a network when determining Device-ID?
+A. IP address, network traffic patterns, device type
+B. MAC address, device manufacturer, operating system
+C. Hostname, application usage, encryption method
+D. Device model, firmware version, user credential
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 37 of 60 --
+
+Topic 1	Question #38
+How does a firewall behave when SSL Inbound Inspection is enabled?
+A. It decrypts inbound and outbound SSH connections.
+B. It acts as meddler-in-the-middle between the client and the internal server.
+C. It acts transparently between the client and the internal server.
+D. It decrypts traffic between the client and the external server.
+Comments
+edmuffins 2 months, 1 week ago
+Selected Answer: C
+When SSL Inbound Inspection is configured on a Palo Alto Networks firewall, it is used to inspect encrypted traffic coming from external clients
+directed to your internal servers.
+To do this, the administrator imports a copy of the internal server’s certificate and private key onto the firewall. Because the firewall has the private
+key, it can transparently "eavesdrop" on the SSL/TLS session, decrypt the traffic, inspect it for threats, and forward the original encrypted packets to
+the server. It does not act as a proxy or break the connection.
+upvoted 2 times
+d624435 1 month, 1 week ago
+The answer C cannot be right, because it is not transparent when the firewall is encrypting traffic coming from external clients reaching internal with
+the SSL-Cert and Key. You can run a unencrypted HTTP server in you backend and encrypt just inbound traffic.
+You can also manipulate the requests with header insertion and perform PostQuantum ciphers (PQC) between client and firewall but keep legacy
+ciphers internally.
+Answer B is correct.
+upvoted 3 times
+Correct Answer: B
+Community vote distribution
+C (100%)
+
+-- 38 of 60 --
+
+Topic 1	Question #39
+In a service provider environment, what key advantage does implementing virtual systems provide for managing multiple
+customer environments?
+A. Shared threat prevention policies across all tenants
+B. Centralized authentication for all customer domains
+C. Unified logging across all virtual systems
+D. Logical separation of control and Security policy
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 39 of 60 --
+
+Topic 1	Question #40
+What are two indications that a packet has been processed into a fast path session? (Choose two.)
+A. Content and application inspection is recognized.
+B. Initial forwarding look is using a FIB.
+C. Previous packets of the same session have been identified.
+D. Security policy lookup is initiated.
+Comments
+edmuffins 2 months, 1 week ago
+Selected Answer: AC
+B (Initial forwarding look is using a FIB) and D (Security policy lookup is initiated) are exclusively slow path operations. They happen only for the first
+packet of a new session to determine where the packet should go and whether it is permitted to establish a connection. Once these are complete,
+subsequent packets bypass these steps and go directly to the fast path.
+upvoted 1 times
+Correct Answer: BC
+Community vote distribution
+AC (100%)
+
+-- 40 of 60 --
+
+Topic 1	Question #41
+Which two content updates can be pushed to NGFWs from Panorama? (Choose two.)
+A. WildFire
+B. Applications and threats
+C. Advanced URL Filtering
+D. GlobalProtect data file
+Comments
+blueturtle1700 1 month, 3 weeks ago
+Selected Answer: AB
+Wildfire + Apps & Threats.
+URL is not a content update.
+https://docs.paloaltonetworks.com/pan-os/11-1/pan-os-upgrade/software-and-content-updates/dynamic-content-updates
+upvoted 3 times
+edmuffins 2 months, 1 week ago
+Selected Answer: AC
+Panorama allows administrators to centrally manage and deploy specific dynamic content updates to managed firewalls to ensure consistent security
+across the deployment. According to Palo Alto Networks documentation, the primary content updates that Panorama can push to firewalls include:
+upvoted 1 times
+d624435 1 month, 1 week ago
+included is only: Antivirus, Application and Threats, Wildfire-Content and Wildfire
+As well as GlobalProtect Agent and software packages
+upvoted 1 times
+Correct Answer: BC
+Community vote distribution
+AB (75%) 	AC (25%)
+
+-- 41 of 60 --
+
+Topic 1	Question #42
+An administrator is responsible for updating which component of Prisma Access?
+A. Management plane
+B. Content updates
+C. Data plane
+D. VPN client
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 42 of 60 --
+
+Topic 1	Question #43
+A Prisma Access administrator wants to attach the same set of Security policies to each new rule created.
+How can the administrator automate the profiles to be attached to new rules?
+A. Create profiles for each CDSS and name them "default."
+B. Create a security profile group and name it "default."
+C. Use AIOps to automate the security profile group attachment.
+D. Use Policy Analyzer after creating the new rules.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 43 of 60 --
+
+Topic 1	Question #44
+Which two components of a Security policy, when configured, allow third-party contractors access to internal applications outside
+business hours? (Choose two.)
+A. User-ID
+B. Service
+C. Schedule
+D. App-ID
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: AC
+
+-- 44 of 60 --
+
+Topic 1	Question #45
+Which two features are supported when using traffic steering rules for remote network deployment on Prisma Access? (Choose
+two.)
+A. Bidirectional Forwarding Detection (BFD)
+B. External dynamic list
+C. Remote desktop protocol (RDP)
+D. Dynamic Address Group
+Comments
+AjaagTain 1 month, 3 weeks ago
+Selected Answer: BD
+B and D
+https://docs.paloaltonetworks.com/prisma-access/administration/prisma-access-advanced-deployments/service-connection-advanced-
+deployments/use-traffic-forwarding-rules-with-service-connections/traffic-steering
+upvoted 2 times
+Correct Answer: BD
+Community vote distribution
+BD (100%)
+
+-- 45 of 60 --
+
+Topic 1	Question #46
+Where does an administrator update the collection of infected hosts in Strata Cloud Manager (SCM) when isolating an identified
+endpoint from a network?
+A. Quarantined device list
+B. Quarantine devices
+C. Actions
+D. Host information profile (HIP)
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 46 of 60 --
+
+Topic 1	Question #47
+How does Strata Logging Service help resolve ever-increasing log retention needs for a company using Prisma Access?
+A. Log traffic using the licensed bandwidth purchased for Prisma Access reduces overhead.
+B. Automatic selection of physical data storage regions decreases adoption time.
+C. It scales to meet the capacity needs of new locations as business grows.
+D. It increases resilience due to decentralized collection and storage of logs.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 47 of 60 --
+
+Topic 1	Question #48
+When physical ION devices are allocated, in which two states are they displayed on the Prisma SD-WAN web interface under
+"Devices"? (Choose two.)
+A. Offline
+B. Standby
+C. Unclaimed
+D. Needs attention
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: AC
+
+-- 48 of 60 --
+
+Topic 1	Question #49
+Which step is necessary to ensure an organization is using the inline cloud analysis features in its Advanced Threat Prevention
+subscription?
+A. Update or create a new Anti-spyware security profile and enable the appropriate local deep learning models.
+B. Enable SSL decryption in Security policies to inspect and analyze encrypted traffic for threats.
+C. Disable anti-spyware to avoid performance impacts and rely solely on external threat intelligence.
+D. Configure Advanced Threat Prevention profiles with default settings and only focus on high-risk traffic to avoid affecting
+network performance.
+Comments
+edmuffins 2 months, 1 week ago
+Selected Answer: A
+A is correct because Advanced Threat Prevention (ATP) capabilities—such as inline cloud analysis and local deep learning for highly evasive
+command-and-control (C2) threats—are explicitly configured and enabled within the Anti-Spyware and Vulnerability Protection security profiles
+. To utilize these ATP features, an administrator must update or create these profiles, enable the specific machine learning/deep learning analysis
+engines (such as the HTTP/SSL Command and Control detectors), and attach the profile to a Security policy rule
+.
+upvoted 2 times
+Correct Answer: B
+Community vote distribution
+A (100%)
+
+-- 49 of 60 --
+
+Topic 1	Question #50
+How do Cloud NGFW instances get created when using AWS centralized deployments?
+A. A security VPC will be created as transit gateways to push all traffic through the area.
+B. They are placed in a vWAN with a virtual hub.
+C. Selected VPCs will have Cloud NGFW workloads added to them.
+D. They replace the internet gateway service.
+Comments
+edmuffins 2 months, 1 week ago
+Selected Answer: A
+n Palo Alto Networks' Cloud NGFW for AWS, there are two primary deployment models:Centralized Deployment (Option A): A dedicated, central
+"Security VPC" is created. An AWS Transit Gateway (TGW) acts as a hub to route traffic from all your various spoke/application VPCs through this
+single Security VPC for inspection. This simplifies management because you don't have to deploy firewalls everywhere.Distributed Deployment
+(Option C): Cloud NGFW endpoints are added directly into the specific, selected application VPCs that need protection.
+upvoted 1 times
+Correct Answer: C
+Community vote distribution
+A (100%)
+
+-- 50 of 60 --
+
+Topic 1	Question #51
+Why would a packet be processed through the slow path on an NGFW?
+A. It does not require application identification or user identification.
+B. It is part of an already established session.
+C. It is part of a new or unestablished session.
+D. It only needs basic NAT and Security policy enforcement.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 51 of 60 --
+
+Topic 1	Question #52
+A company has an ongoing initiative to monitor and control IT-sanctioned SaaS applications. To be successful, it will require
+configuration of decryption policies, along with data filtering and URL Filtering profiles used in Security policies.
+Based on the need to decrypt SaaS applications, which two steps are appropriate to ensure success? (Choose two.)
+A. Validate which certificates will be used to establish trust.
+B. Configure SSL Inbound Inspection.
+C. Create new self-signed certificates to use for decryption.
+D. Configure SSL Forward Proxy.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: AD
+
+-- 52 of 60 --
+
+Topic 1	Question #53
+Which security profile provides real-time protection against threat actors who exploit the misconfigurations of DNS infrastructure
+and redirect traffic to malicious domains?
+A. Intelligent Run-time Memory Analysis
+B. Machine learning (ML)
+C. Dynamic analysis
+D. Static analysis
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 53 of 60 --
+
+Topic 1	Question #54
+Which security profile provides real-time protection against threat actors who exploit the misconfigurations of DNS infrastructure
+and redirect traffic to malicious domains?
+A. Anti-spyware
+B. URL Filtering
+C. Antivirus
+D. Vulnerability Protection
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: A
+
+-- 54 of 60 --
+
+Topic 1	Question #55
+How many places will a firewall administrator need to create and configure a custom data loss prevention (DLP) profile across
+Prisma Access and the NGFW?
+A. One
+B. Two
+C. Three
+D. Four
+Comments
+edmuffins 2 months, 1 week ago
+Selected Answer: A
+Palo Alto Networks Enterprise DLP is a unified, cloud-delivered service designed around a "write once, apply everywhere" model. An administrator
+only needs to create and configure a custom DLP profile in one central management location (such as Strata Cloud Manager or Panorama).
+upvoted 2 times
+Correct Answer: B
+Community vote distribution
+A (100%)
+
+-- 55 of 60 --
+
+Topic 1	Question #56
+Within which security profile is the DNS sinkholing action enabled?
+A. File Blocking
+B. Antivirus
+C. Anti-spyware
+D. DoS Protection
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: C
+
+-- 56 of 60 --
+
+Topic 1	Question #57
+When a firewall acts as an application-level gateway (ALG), what does it require in order to establish a connection?
+A. Dynamic IP and Port (DIPP)
+B. Session Initiation Protocol (SIP)
+C. Payload
+D. Pinholes
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: D
+
+-- 57 of 60 --
+
+Topic 1	Question #58
+Which two configurations are required when creating deployment profiles to migrate a perpetual VM-Series firewall to a flexible
+VM? (Choose two.)
+A. Allow only the same security services as the perpetual VM.
+B. Deploy virtual Panorama for management.
+C. Choose "Fixed vCPU Models" for configuration type.
+D. Allocate the same number of vCPUs as the perpetual VM.
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: AD
+
+-- 58 of 60 --
+
+Topic 1	Question #59
+A firewall administrator wants to enable host information profiles (HIPs) to collect information from corporate hosts by using
+GlobalProtect.
+Which two details will the administrator be able to collect from the host? (Choose two.)
+A. WAN statistics
+B. Antivirus definitions
+C. Host memory consumption
+D. Disk encryption
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: BD
+
+-- 59 of 60 --
+
+Topic 1	Question #60
+Which NGFW function can be used to enhance visibility, protect, block, and log the use of Post-quantum Cryptography (PQC)?
+A. DNS Security profile
+B. Decryption profile
+C. Security policy
+D. Decryption policy
+Comments
+Currently there are no comments in this discussion, be the first to comment!
+Correct Answer: B
+
+-- 60 of 60 --
+

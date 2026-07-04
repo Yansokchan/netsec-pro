@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mode } from '../App';
 import { questions as netsecQuestions } from '../data';
 import { questions as secopsQuestions } from '../secopsData';
+import { questions as netsec2Questions } from '../netsec2Data';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
 import {
@@ -14,7 +15,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 
-export type Course = 'netsec' | 'secops';
+export type Course = 'netsec' | 'secops' | 'netsec2';
 
 interface HomeProps {
   onSelect: (course: Course, mode: Mode, duration?: number) => void;
@@ -28,7 +29,15 @@ const COURSES = [
       'Palo Alto Networks Certified Network Security Professional exam prep.',
     questions: netsecQuestions.length,
     icon: BookOpen,
-    accent: 'blue',
+    styles: {
+      cardBorder: 'border-blue-100',
+      topBar: 'bg-gradient-to-r from-blue-400 to-indigo-500',
+      iconBg: 'bg-blue-50 text-blue-600',
+      studyBtn: 'border-indigo-100 hover:border-indigo-300 hover:bg-indigo-50/50',
+      studyIcon: 'text-indigo-600',
+      quizBtn: 'border-teal-100 hover:border-teal-300 hover:bg-teal-50/50',
+      quizIcon: 'text-teal-600',
+    }
   },
   {
     id: 'secops' as const,
@@ -36,7 +45,31 @@ const COURSES = [
     description: 'Security Operations exam prep from SecOps-Pro study material.',
     questions: secopsQuestions.length,
     icon: ShieldCheck,
-    accent: 'green',
+    styles: {
+      cardBorder: 'border-green-100',
+      topBar: 'bg-gradient-to-r from-green-400 to-emerald-500',
+      iconBg: 'bg-green-50 text-green-600',
+      studyBtn: 'border-green-100 hover:border-green-300 hover:bg-green-50/50',
+      studyIcon: 'text-green-600',
+      quizBtn: 'border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50/50',
+      quizIcon: 'text-emerald-600',
+    }
+  },
+  {
+    id: 'netsec2' as const,
+    name: 'NetSec-Pro-II',
+    description: 'Palo Alto Networks Certified Network Security Professional II exam prep with discussions.',
+    questions: netsec2Questions.length,
+    icon: BookOpen,
+    styles: {
+      cardBorder: 'border-indigo-100',
+      topBar: 'bg-gradient-to-r from-indigo-400 to-purple-500',
+      iconBg: 'bg-indigo-50 text-indigo-600',
+      studyBtn: 'border-indigo-100 hover:border-indigo-300 hover:bg-indigo-50/50',
+      studyIcon: 'text-indigo-600',
+      quizBtn: 'border-purple-100 hover:border-purple-300 hover:bg-purple-50/50',
+      quizIcon: 'text-purple-600',
+    }
   },
 ];
 
@@ -46,7 +79,12 @@ export default function Home({ onSelect }: HomeProps) {
 
   const openQuizConfig = (course: Course) => {
     setQuizCourse(course);
-    const count = course === 'netsec' ? netsecQuestions.length : secopsQuestions.length;
+    const count =
+      course === 'netsec'
+        ? netsecQuestions.length
+        : course === 'secops'
+        ? secopsQuestions.length
+        : netsec2Questions.length;
     setMinutes(Math.min(180, Math.max(30, Math.ceil(count * 1.5))));
   };
 
@@ -54,7 +92,9 @@ export default function Home({ onSelect }: HomeProps) {
   const quizCount = quizCourse
     ? quizCourse === 'netsec'
       ? netsecQuestions.length
-      : secopsQuestions.length
+      : quizCourse === 'secops'
+      ? secopsQuestions.length
+      : netsec2Questions.length
     : 0;
 
   return (
@@ -134,27 +174,19 @@ export default function Home({ onSelect }: HomeProps) {
       <div className="grid lg:grid-cols-2 gap-8 mb-10">
         {COURSES.map((course) => {
           const Icon = course.icon;
-          const isNetsec = course.accent === 'blue';
+          const { cardBorder, topBar, iconBg, studyBtn, studyIcon, quizBtn, quizIcon } = course.styles;
           return (
             <Card
               key={course.id}
-              className={`relative overflow-hidden border-2 ${
-                isNetsec ? 'border-blue-100' : 'border-green-100'
-              }`}
+              className={`relative overflow-hidden border-2 ${cardBorder}`}
             >
               <div
-                className={`absolute top-0 left-0 w-full h-1 ${
-                  isNetsec
-                    ? 'bg-gradient-to-r from-blue-400 to-indigo-500'
-                    : 'bg-gradient-to-r from-green-400 to-emerald-500'
-                }`}
+                className={`absolute top-0 left-0 w-full h-1 ${topBar}`}
               />
               <div className="p-8">
                 <div className="flex items-start gap-4 mb-6">
                   <div
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${
-                      isNetsec ? 'bg-blue-50 text-blue-600' : 'bg-green-50 text-green-600'
-                    }`}
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${iconBg}`}
                   >
                     <Icon className="w-7 h-7" />
                   </div>
@@ -172,43 +204,31 @@ export default function Home({ onSelect }: HomeProps) {
                 <div className="grid sm:grid-cols-2 gap-3">
                   <button
                     onClick={() => onSelect(course.id, 'study-guide')}
-                    className={`group flex items-center justify-between p-4 rounded-xl border transition-all text-left ${
-                      isNetsec
-                        ? 'border-indigo-100 hover:border-indigo-300 hover:bg-indigo-50/50'
-                        : 'border-green-100 hover:border-green-300 hover:bg-green-50/50'
-                    }`}
+                    className={`group flex items-center justify-between p-4 rounded-xl border transition-all text-left ${studyBtn}`}
                   >
                     <div className="flex items-center gap-3">
                       <BookOpen
-                        className={`w-5 h-5 ${isNetsec ? 'text-indigo-600' : 'text-green-600'}`}
+                        className={`w-5 h-5 ${studyIcon}`}
                       />
                       <span className="font-semibold text-slate-800">Study Guide</span>
                     </div>
                     <ChevronRight
-                      className={`w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform ${
-                        isNetsec ? 'text-indigo-600' : 'text-green-600'
-                      }`}
+                      className={`w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform ${studyIcon}`}
                     />
                   </button>
 
                   <button
                     onClick={() => openQuizConfig(course.id)}
-                    className={`group flex items-center justify-between p-4 rounded-xl border transition-all text-left ${
-                      isNetsec
-                        ? 'border-teal-100 hover:border-teal-300 hover:bg-teal-50/50'
-                        : 'border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50/50'
-                    }`}
+                    className={`group flex items-center justify-between p-4 rounded-xl border transition-all text-left ${quizBtn}`}
                   >
                     <div className="flex items-center gap-3">
                       <BrainCircuit
-                        className={`w-5 h-5 ${isNetsec ? 'text-teal-600' : 'text-emerald-600'}`}
+                        className={`w-5 h-5 ${quizIcon}`}
                       />
                       <span className="font-semibold text-slate-800">Practice Quiz</span>
                     </div>
                     <ChevronRight
-                      className={`w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform ${
-                        isNetsec ? 'text-teal-600' : 'text-emerald-600'
-                      }`}
+                      className={`w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform ${quizIcon}`}
                     />
                   </button>
                 </div>

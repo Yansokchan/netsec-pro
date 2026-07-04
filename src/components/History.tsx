@@ -82,10 +82,12 @@ export default function History() {
                     className={`inline-block text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-2 ${
                       entry.course === 'secops'
                         ? 'bg-green-100 text-green-700'
+                        : entry.course === 'netsec2'
+                        ? 'bg-indigo-100 text-indigo-700'
                         : 'bg-blue-100 text-blue-700'
                     }`}
                   >
-                    {(entry.course ?? 'netsec') === 'secops' ? 'SecOps-Pro' : 'NetSec-Pro'}
+                    {entry.course === 'secops' ? 'SecOps-Pro' : entry.course === 'netsec2' ? 'NetSec-Pro-II' : 'NetSec-Pro'}
                   </span>
                   <div className="text-sm font-semibold text-slate-500 mb-1">
                     {formatDate(entry.date)}

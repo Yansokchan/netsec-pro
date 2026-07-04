@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import { questions as netsecQuestions } from '../data';
 import { questions as secopsQuestions } from '../secopsData';
+import { questions as netsec2Questions } from '../netsec2Data';
 import { Card } from './ui/Card';
 import { Search, BookOpen, CheckCircle2 } from 'lucide-react';
 
-export default function StudyGuide({ course }: { course: 'netsec' | 'secops' }) {
+export default function StudyGuide({ course }: { course: 'netsec' | 'secops' | 'netsec2' }) {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const questions = course === 'netsec' ? netsecQuestions : secopsQuestions;
+  const questions =
+    course === 'netsec'
+      ? netsecQuestions
+      : course === 'secops'
+      ? secopsQuestions
+      : netsec2Questions;
   const filteredQuestions = questions.filter(
     (q) =>
       q.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -19,7 +25,7 @@ export default function StudyGuide({ course }: { course: 'netsec' | 'secops' }) 
       <div className="mb-8 text-center space-y-4">
         <h2 className="text-3xl font-extrabold text-slate-900 flex items-center justify-center gap-3">
           <BookOpen className="w-8 h-8 text-indigo-600" />
-          {course === 'netsec' ? 'NetSec-Pro' : 'SecOps-Pro'} Study Guide
+          {course === 'netsec' ? 'NetSec-Pro' : course === 'secops' ? 'SecOps-Pro' : 'NetSec-Pro-II'} Study Guide
         </h2>
         <p className="text-slate-500 text-lg">
           Review all {questions.length} questions, answers, and detailed explanations.

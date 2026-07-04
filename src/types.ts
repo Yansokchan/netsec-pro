@@ -14,5 +14,5 @@ export interface QuizHistoryEntry {
   timeTakenSeconds: number;
   answeredQuestions: number;
   completed: boolean;
-  course?: 'netsec' | 'secops';
+  course?: 'netsec' | 'secops' | 'netsec2';
 }

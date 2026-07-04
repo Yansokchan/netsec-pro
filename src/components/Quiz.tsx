@@ -2,13 +2,14 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { questions as netsecQuestions } from '../data';
 import { questions as secopsQuestions } from '../secopsData';
+import { questions as netsec2Questions } from '../netsec2Data';
 import { Question, QuizHistoryEntry } from '../types';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { cn, shuffleArray } from '../utils';
 import { AlertCircle, CheckCircle2, Lightbulb, XCircle, RotateCcw, ChevronRight, Clock } from 'lucide-react';
 
-export default function Quiz({ course, duration, onComplete }: { course: 'netsec' | 'secops'; duration: number; onComplete: () => void }) {
+export default function Quiz({ course, duration, onComplete }: { course: 'netsec' | 'secops' | 'netsec2'; duration: number; onComplete: () => void }) {
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<string[]>([]);
@@ -30,7 +31,13 @@ export default function Quiz({ course, duration, onComplete }: { course: 'netsec
   const isMountedRef = useRef(true);
   
   useEffect(() => {
-    const shuffled = shuffleArray(course === 'netsec' ? netsecQuestions : secopsQuestions);
+    const shuffled = shuffleArray(
+      course === 'netsec'
+        ? netsecQuestions
+        : course === 'secops'
+        ? secopsQuestions
+        : netsec2Questions
+    );
     setShuffledQuestions(shuffled);
   }, [course]);
 
